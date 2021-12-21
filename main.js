@@ -1,11 +1,13 @@
-song1=""
-song2=""
-rightWristX=0
-rightWristY=0
-leftWristX=0
-leftWristY=0
-ScoreLeftWrist=0
-ScoreRighttWrist=0
+song1="";
+song2="";
+rightWristX=0;
+rightWristY=0;
+leftWristX=0;
+leftWristY=0;
+ScoreLeftWrist=0;
+ScoreRightWrist=0;
+song1_status = "";
+song2_status = "";
 
 function preload(){
     song1 = loadSound("music.mp3");
@@ -63,7 +65,7 @@ function gotPoses(results){
     if(results.length > 0){
         console.log(results);
         ScoreLeftWrist = results[0].pose.keypoints[9].score;
-        ScoreRighttWrist = results[0].pose.keypoints[10].score;
+        ScoreRightWrist = results[0].pose.keypoints[10].score;
         leftWristX = results[0].pose.leftWrist.x;
         leftWristY = results[0].pose.leftWrist.y;
         console.log("Left Wrist X = " + leftWristX + "   Left Wrist Y = " + leftWristY);
